@@ -95,3 +95,8 @@ body {
   color: hsl(200, 100%, 20%);
   margin: 0.5rem;
 }
+
+.hour-section {
+  width: 100%;
+  text-align: center;
+}
