@@ -10,6 +10,11 @@ body {
   font-family: sans-serif;
 }
 
+.blurred {
+  filter: blur(3px);
+  overflow: hidden;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -47,4 +52,46 @@ body {
   gap: 0.5rem;
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(2, auto);
+}
+
+.info-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.6rem;
+  color: hsl(200, 100%, 20%);
+}
+
+.value-sub-info {
+  font-weight: lighter;
+  font-size: 0.75rem;
+}
+
+
+.day-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 75px);
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.day-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid hsl(200, 100%, 10%);
+  border-radius: .25rem;
+  padding: .25rem;
+}
+
+.day-card-day {
+  font-size: .75rem;
+  color: hsl(200, 100%, 20%);
+  margin: 0.5rem;
 }
