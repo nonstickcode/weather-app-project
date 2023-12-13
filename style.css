@@ -122,9 +122,10 @@ body {
 }
 
 @media (max-width: 600px) {
+
   .header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .header-left {
@@ -138,6 +139,22 @@ body {
     width: 100%;
     justify-content: center;
     margin-top: 1rem;
+    
+  }
+  .label {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+    color: hsl(200, 100%, 20%);
+  }
+  
+  .value-sub-info {
+    font-weight: lighter;
+    font-size: 1.3rem;
+  }
+
+  .info-group {
+    padding: 0.5rem;
   }
 
   .header-location-display {
