@@ -47,6 +47,11 @@ body {
   margin-left: 1rem;
 }
 
+.fahrenheit {
+  font-size: 1.25rem;
+  padding-bottom: 0.25rem;
+}
+
 .header-location-display {
   font-size: 1.25rem;
   color: hsl(200, 100%, 20%);
