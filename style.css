@@ -120,3 +120,37 @@ body {
 .hour-row > td {
   padding: 0.25rem 0.5rem;
 }
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-left {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid hsl(200, 100%, 10%);
+    justify-content: center;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .header-location-display {
+    order: 2;
+    margin-left: 1rem;
+    text-align: center;
+  }
+
+  .header-current-temp {
+    order: 1;
+  }
+
+  .weather-icon {
+    order: 0;
+  }
+}
