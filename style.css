@@ -141,17 +141,7 @@ body {
     margin-top: 1rem;
     
   }
-  .label {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1rem;
-    color: hsl(200, 100%, 20%);
-  }
-  
-  .value-sub-info {
-    font-weight: lighter;
-    font-size: 1.3rem;
-  }
+ 
 
   .info-group {
     padding: 0.5rem;
@@ -171,4 +161,5 @@ body {
     order: 0;
     margin-bottom: .75rem;
   }
+
 }
