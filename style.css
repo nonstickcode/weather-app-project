@@ -5,8 +5,8 @@
 
 body {
   margin: 0;
-  background-color: hsl(200, 100%, 85%);
-  color: hsl(200, 100%, 10%);
+  background-color: hsl(152, 100%, 85%);
+  color: hsl(008, 100%, 10%);
   font-family: sans-serif;
 }
 
@@ -26,13 +26,14 @@ body {
   justify-content: center;
   margin: 0.5rem;
   padding: 0.5rem;
-  border-right: 2px solid hsl(200, 100%, 10%);
+  border-right: 2px solid hsl(008, 100%, 10%);
 }
 
 .weather-icon {
   width: 40px;
   height: 40px;
   object-fit: contain;
+  color: hsl(008, 100%, 20%);
 }
 
 .weather-icon.large {
@@ -64,7 +65,7 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.6rem;
-  color: hsl(200, 100%, 20%);
+  color: hsl(008, 100%, 20%);
 }
 
 .value-sub-info {
@@ -85,14 +86,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid hsl(200, 100%, 10%);
+  border: 1px solid hsl(008, 100%, 10%);
   border-radius: .25rem;
   padding: .25rem;
 }
 
 .day-card-day {
   font-size: .75rem;
-  color: hsl(200, 100%, 20%);
+  color: hsl(008, 100%, 20%);
   margin: 0.5rem;
 }
 
@@ -103,11 +104,11 @@ body {
 }
 
 .hour-row {
-  background-color: hsl(200, 60%, 75%);
+  background-color: hsl(152, 60%, 85%);
 }
 
 .hour-row:nth-child(2n) {
-  background-color: hsl(200, 60%, 70%);
+  background-color: hsl(152, 60%, 70%);
 }
 
 .hour-row > td {
