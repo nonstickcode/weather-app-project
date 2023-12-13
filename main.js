@@ -15,6 +15,14 @@ function positionSuccess({ coords }) {
       console.error(e)
       alert("Error getting weather.")
     })
+
+    displayLocation(coords);
+}
+
+function displayLocation(coords) {
+  // For now, we'll display the latitude and longitude.
+  // You can later replace this with a call to a reverse geocoding API.
+  setValue('location', `Lat: ${coords.latitude.toFixed(2)}, Long: ${coords.longitude.toFixed(2)}`);
 }
 
 function positionError() {

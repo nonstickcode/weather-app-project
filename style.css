@@ -47,6 +47,11 @@ body {
   margin-left: 1rem;
 }
 
+.header-location-display {
+  font-size: 1rem;
+  margin-left: 2rem;
+}
+
 .header-right {
   display: grid;
   width: 50%;
