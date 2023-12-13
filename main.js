@@ -99,4 +99,3 @@ function renderHourlyWeather(hourly) {
   })
 }
 
-// built
