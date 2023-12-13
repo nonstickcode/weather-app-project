@@ -20,10 +20,20 @@ function positionSuccess({ coords }) {
 }
 
 function displayLocation(coords) {
-  // For now, we'll display the latitude and longitude.
-  // You can later replace this with a call to a reverse geocoding API.
-  setValue('location', `Lat: ${coords.latitude.toFixed(2)}, Long: ${coords.longitude.toFixed(2)}`);
+  fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${coords.latitude}&lon=${coords.longitude}`)
+    .then(response => response.json())
+    .then(data => {
+      const address = data.address;
+      const city = address.city || address.town || address.village;
+      const state = address.state;
+      setValue('location', `${city}, ${state}`);
+    })
+    .catch(e => {
+      console.error(e);
+      setValue('location', "Error converting to city");
+    });
 }
+
 
 function positionError() {
   alert(
