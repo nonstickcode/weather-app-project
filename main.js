@@ -98,3 +98,5 @@ function renderHourlyWeather(hourly) {
     hourlySection.append(element)
   })
 }
+
+// built
