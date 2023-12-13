@@ -19,6 +19,12 @@ function positionSuccess({ coords }) {
     displayLocation(coords);
 }
 
+function positionError() {
+  alert(
+    "There was an error getting your location. Please allow us to use your location and refresh the page."
+  )
+}
+
 function displayLocation(coords) {
   fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${coords.latitude}&lon=${coords.longitude}`)
     .then(response => response.json())
@@ -30,15 +36,8 @@ function displayLocation(coords) {
     })
     .catch(e => {
       console.error(e);
-      setValue('location', "Error converting to city");
+      alert("Error converting latitude and longitude to city and state");
     });
-}
-
-
-function positionError() {
-  alert(
-    "There was an error getting your location. Please allow us to use your location and refresh the page."
-  )
 }
 
 function renderWeather({ current, daily, hourly }) {
