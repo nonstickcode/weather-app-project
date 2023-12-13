@@ -48,7 +48,8 @@ body {
 }
 
 .header-location-display {
-  font-size: 1rem;
+  font-size: 1.25rem;
+  color: hsl(200, 100%, 20%);
   margin-left: 2rem;
 }
 
