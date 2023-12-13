@@ -152,7 +152,6 @@ body {
 
   .weather-icon {
     order: 0;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: .75rem;
   }
 }
