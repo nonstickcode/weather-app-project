@@ -2,6 +2,9 @@ import "./style.css"
 import { getWeather } from "./weather"
 import { ICON_MAP } from "./iconMap"
 
+const apiKey = import.meta.env.VITE_API_KEY;
+
+
 navigator.geolocation.getCurrentPosition(positionSuccess, positionError)
 
 function positionSuccess({ coords }) {
@@ -65,6 +68,9 @@ function renderCurrentWeather(current) {
   setValue("current-fl-low", current.lowFeelsLike)
   setValue("current-wind", current.windSpeed)
   setValue("current-precip", current.precip)
+
+
+
 }
 
 const DAY_FORMATTER = new Intl.DateTimeFormat(undefined, { weekday: "long" })
