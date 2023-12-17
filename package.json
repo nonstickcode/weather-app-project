@@ -15,8 +15,6 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
-    "axios": "^1.6.2",
-    "dotenv": "^16.3.1",
-    "openai": "^4.22.1"
+    "axios": "^1.6.2"
   }
 }
