@@ -14,7 +14,7 @@ body {
 
 /* Common Blurred Background */
 .blurred {
-  filter: blur(2px);
+  filter: blur(7px);
   overflow: hidden;
 }
 
@@ -22,56 +22,35 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px; /* Adjust the margin as needed */
+  margin: 10px;
 }
 
 .theme-toggle input[type="checkbox"] {
-  appearance: none; /* Remove default styles */
-  -webkit-appearance: none; /* For webkit-based browsers */
-  width: 40px; /* Set the width of the switch */
-  height: 20px; /* Set the height of the switch */
-  background-color: #ccc; /* Background color for the switch */
-  border-radius: 10px; /* Rounded corners */
+  appearance: none;
+  -webkit-appearance: none;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
   position: relative;
   cursor: pointer;
   color:#0a0f1d
 }
 
 .theme-toggle input[type="checkbox"]::before {
-  content: ""; /* Create a pseudo-element for the slider */
+  content: "";
   position: absolute;
-  width: 18px; /* Width of the slider */
-  height: 18px; /* Height of the slider */
-  background-color: #fff; /* Color of the slider */
-  border-radius: 50%; /* Round the slider */
-  transition: transform 0.3s; /* Add a smooth animation effect */
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  transition: transform 0.3s;
 }
 
 .theme-toggle input[type="checkbox"]:checked::before {
-  transform: translateX(20px); /* Move the slider to the right when checked */
+  transform: translateX(20px);
 }
 
 .theme-toggle label {
-  margin-right: .75rem; /* Adjust the padding as needed */
-}
-
-/* Dark Mode Toggle Switch */
-.dark-mode .theme-toggle input[type="checkbox"] {
-  background-color: #CCCCCC;
-}
-
-.dark-mode .theme-toggle input[type="checkbox"]::before {
-  background-color: #333333; /* Change slider color for dark mode */
-  border: none;
-}
-
-/* Light Mode Toggle Switch */
-.light-mode .theme-toggle input[type="checkbox"] {
-  background-color: #333333;
-}
-
-.light-mode .theme-toggle input[type="checkbox"]::before {
-  background-color: #CCCCCC; /* Change slider color for light mode */
+  margin-right: .75rem;
 }
 
 .header {
@@ -97,7 +76,8 @@ body {
   width: 60px;
   height: 60px;
   object-fit: contain;
-  
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .weather-icon.large {
@@ -188,8 +168,8 @@ body {
   }
 
   .header-left {
-    border-bottom: 1px solid #333; /* Add a bottom border to separate left header */
-    padding-bottom: 1rem; /* Add padding for spacing */
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
   }
   .dark-mode .header-left {
     border-bottom: 1px solid #c7d3f2;
@@ -199,9 +179,9 @@ body {
   }
 
   .header-right {
-    flex-direction: column; /* Change to column layout */
-    align-items: center; /* Center content vertically */
-    gap: 0.5rem; /* Adjust spacing between items */
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
@@ -211,14 +191,14 @@ body {
   }
 
   .info-group {
-    flex-direction: column; /* Change to column layout */
-    align-items: center; /* Center content vertically */
+    flex-direction: column;
+    align-items: center;
     padding: 0rem;
   }
 
   .day-card {
-    flex-direction: column; /* Change to column layout */
-    align-items: center; /* Center content vertically */
+    flex-direction: column;
+    align-items: center;
     border-radius: 8px;
     padding: 1rem;
   }
@@ -233,6 +213,14 @@ body {
 .light-mode {
   background-color: #f0f4f7;
   color: #333;
+}
+
+.light-mode .theme-toggle input[type="checkbox"] {
+  background-color: #333333;
+}
+
+.light-mode .theme-toggle input[type="checkbox"]::before {
+  background-color: #CCCCCC;
 }
 
 .light-mode .header,
@@ -263,6 +251,15 @@ body {
 .dark-mode {
   background-color: #0a0f1d;
   color: #c7d3f2;
+}
+
+.dark-mode .theme-toggle input[type="checkbox"] {
+  background-color: #CCCCCC;
+}
+
+.dark-mode .theme-toggle input[type="checkbox"]::before {
+  background-color: #333333;
+  border: none;
 }
 
 .dark-mode .header,
