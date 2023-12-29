@@ -79,7 +79,6 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .header-left {
@@ -87,11 +86,18 @@ body {
   align-items: center;
 }
 
+.header-left {
+  .weather-icon {
+    padding-right: 0.5rem;
+    padding-left: 0.1rem;
+  }
+}
+
 .weather-icon {
   width: 60px;
   height: 60px;
   object-fit: contain;
-  margin-right: 1rem;
+  
 }
 
 .weather-icon.large {
@@ -216,6 +222,11 @@ body {
     border-radius: 8px;
     padding: 1rem;
   }
+  .hour-section .weather-icon {
+      width: 2rem;
+      height: 2rem;
+    
+  }
 }
 
 /* Light Theme Specific Styles */
@@ -227,6 +238,8 @@ body {
 .light-mode .header,
 .light-mode .day-card {
   background-color: #ffffff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  border: 1px solid #bec8de;
 }
 
 .light-mode .hour-row {
@@ -255,7 +268,7 @@ body {
 .dark-mode .header,
 .dark-mode .day-card {
   background-color: #162033;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  box-shadow: 0 3px 6px rgba(255, 255, 255, 0.1);
   border: 1px solid #2b3a57;
 }
 

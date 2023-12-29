@@ -120,11 +120,13 @@ function renderCurrentWeather(current) {
 const DAY_FORMATTER = new Intl.DateTimeFormat(undefined, { weekday: "long" })
 const dailySection = document.querySelector("[data-day-section]")
 const dayCardTemplate = document.getElementById("day-card-template")
+
+
 function renderDailyWeather(daily) {
   dailySection.innerHTML = ""
   daily.forEach(day => {
     const element = dayCardTemplate.content.cloneNode(true)
-    setValue("temp", day.maxTemp, { parent: element })
+    setValue("temp", day.maxTemp, { parent: element }) // day temp here is only temp
     setValue("date", DAY_FORMATTER.format(day.timestamp), { parent: element })
     element.querySelector("[data-icon]").src = getIconUrl(day.iconCode)
     dailySection.append(element)
