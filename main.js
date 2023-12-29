@@ -4,6 +4,7 @@ import { ICON_MAP } from "./iconMap"
 
 const apiKey = import.meta.env.VITE_API_KEY;
 const themeToggle = document.getElementById("themeToggle");
+const toggleLabel = document.getElementById("toggleLabel");
 const bodyClass = document.body.classList;
 
 // Function to toggle the theme
@@ -12,11 +13,13 @@ function toggleTheme() {
     // Dark mode
     bodyClass.remove("light-mode");
     bodyClass.add("dark-mode");
+    toggleLabel.textContent = "Toggle Light Mode"; // Update label text
     localStorage.setItem("theme", "dark");
   } else {
     // Light mode
     bodyClass.remove("dark-mode");
     bodyClass.add("light-mode");
+    toggleLabel.textContent = "Toggle Dark Mode"; // Update label text
     localStorage.setItem("theme", "light");
   }
 }
@@ -32,10 +35,12 @@ function setInitialTheme() {
   if (storedTheme === "dark" || (userPrefersDark && !storedTheme)) {
     // Set dark mode
     bodyClass.add("dark-mode");
+    toggleLabel.textContent = "Toggle Light Mode"; // Update label text
     themeToggle.checked = true; // Toggle the checkbox
   } else {
     // Set light mode
     bodyClass.add("light-mode");
+    toggleLabel.textContent = "Toggle Dark Mode"; // Update label text
     themeToggle.checked = false; // Ensure checkbox is unchecked
   }
 }
