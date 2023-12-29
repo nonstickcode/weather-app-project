@@ -60,12 +60,20 @@ body {
   background-color: #CCCCCC;
 }
 
+.dark-mode .theme-toggle input[type="checkbox"]::before {
+  background-color: #333333; /* Change slider color for dark mode */
+  border: none;
+}
+
 /* Light Mode Toggle Switch */
 .light-mode .theme-toggle input[type="checkbox"] {
   background-color: #333333;
 }
 
-/* Common Header Layout */
+.light-mode .theme-toggle input[type="checkbox"]::before {
+  background-color: #CCCCCC; /* Change slider color for light mode */
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -74,7 +82,6 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Common Header Left Section */
 .header-left {
   display: flex;
   align-items: center;
@@ -155,7 +162,12 @@ body {
 }
 
 /* Responsive Design Adjustments */
-@media (max-width: 600px) {
+@media (min-width: 1000px) {
+  .header, .day-card {
+    font-size: xx-large;
+  }
+}
+@media (max-width: 850px) {
   .header {
     flex-direction: column;
   }
@@ -166,6 +178,17 @@ body {
     margin-bottom: 1rem;
   }
 
+  .header-left {
+    border-bottom: 1px solid #333; /* Add a bottom border to separate left header */
+    padding-bottom: 1rem; /* Add padding for spacing */
+  }
+  .dark-mode .header-left {
+    border-bottom: 1px solid #c7d3f2;
+  }
+  .light-mode .header-left {
+    border-bottom: 1px solid #333;
+  }
+
   .header-right {
     flex-direction: column; /* Change to column layout */
     align-items: center; /* Center content vertically */
@@ -173,6 +196,9 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
+    font-size: x-large;
+    padding-top: 1rem;
+    
   }
 
   .info-group {
