@@ -151,7 +151,7 @@ body {
 }
 
 /* Responsive Design Adjustments */
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   .header, .day-card {
     font-size: xx-large;
   }
