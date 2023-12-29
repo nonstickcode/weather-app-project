@@ -138,7 +138,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1rem;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem;
   text-transform: uppercase;
 }
 
