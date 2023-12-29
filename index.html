@@ -13,7 +13,7 @@
      <!-- <link rel="mask-icon" href="/public/icon.png" color="#5bbad5"> -->
      <!-- Other meta tags for mobile compatibility -->
      <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="module" crossorigin src="/weather-app-project/assets/index-En0FWt1z.js"></script>
+    <script type="module" crossorigin src="/weather-app-project/assets/index-X1qNqKBs.js"></script>
     <link rel="stylesheet" crossorigin href="/weather-app-project/assets/index-gZr35xzI.css">
   </head>
   <body class="blurred">
@@ -71,37 +71,37 @@
       <div class="day-card">
         <img src="icons/cloud.svg" class="weather-icon" />
         <div class="day-card-day">Monday</div>
-        <div>32&deg;</div>
+        <div>32&deg; > 69&deg;</div>
       </div>
       <div class="day-card">
         <img src="icons/cloud.svg" class="weather-icon" />
         <div class="day-card-day">Tuesday</div>
-        <div>32&deg;</div>
+        <div>32&deg; - 69&deg;</div>
       </div>
       <div class="day-card">
         <img src="icons/cloud.svg" class="weather-icon" />
         <div class="day-card-day">Wednesday</div>
-        <div>32&deg;</div>
+        <div>32&deg; > 69&deg;</div>
       </div>
       <div class="day-card">
         <img src="icons/cloud.svg" class="weather-icon" />
         <div class="day-card-day">Thursday</div>
-        <div>32&deg;</div>
+        <div>32&deg; > 69&deg;</div>
       </div>
       <div class="day-card">
         <img src="icons/cloud.svg" class="weather-icon" />
         <div class="day-card-day">Friday</div>
-        <div>32&deg;</div>
+        <div>32&deg; > 69&deg;</div>
       </div>
       <div class="day-card">
         <img src="icons/cloud.svg" class="weather-icon" />
         <div class="day-card-day">Saturday</div>
-        <div>32&deg;</div>
+        <div>32&deg; > 69&deg;</div>
       </div>
       <div class="day-card">
         <img src="icons/cloud.svg" class="weather-icon" />
         <div class="day-card-day">Sunday</div>
-        <div>32&deg;</div>
+        <div>32&deg; > 69&deg;</div>
       </div>
     </section>
 
@@ -464,9 +464,12 @@
       <div class="day-card">
         <img data-icon class="weather-icon" />
         <div class="day-card-day" data-date></div>
-        <div><span data-temp></span><span>&deg;</span></div>
+        <div>
+          <span data-min-temp></span><span> > </span><span data-max-temp></span>
+        </div>
       </div>
     </template>
+    
 
     <template id="hour-row-template">
       <tr class="hour-row">
