@@ -22,7 +22,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px; /* Adjust the margin as needed */
+  margin: 10px; /* Adjust the margin as needed */
 }
 
 .theme-toggle input[type="checkbox"] {
@@ -34,6 +34,7 @@ body {
   border-radius: 10px; /* Rounded corners */
   position: relative;
   cursor: pointer;
+  color:#0a0f1d
 }
 
 .theme-toggle input[type="checkbox"]::before {
@@ -50,7 +51,19 @@ body {
   transform: translateX(20px); /* Move the slider to the right when checked */
 }
 
+.theme-toggle label {
+  margin-right: .75rem; /* Adjust the padding as needed */
+}
 
+/* Dark Mode Toggle Switch */
+.dark-mode .theme-toggle input[type="checkbox"] {
+  background-color: #CCCCCC;
+}
+
+/* Light Mode Toggle Switch */
+.light-mode .theme-toggle input[type="checkbox"] {
+  background-color: #333333;
+}
 
 /* Common Header Layout */
 .header {
@@ -111,7 +124,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* Common Day Section */
 .day-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -133,7 +145,6 @@ body {
   margin: 0.5rem 0;
 }
 
-/* Common Hour Section */
 .hour-section {
   width: 100%;
   text-align: center;
@@ -155,12 +166,26 @@ body {
     margin-bottom: 1rem;
   }
 
+  .header-right {
+    flex-direction: column; /* Change to column layout */
+    align-items: center; /* Center content vertically */
+    gap: 0.5rem; /* Adjust spacing between items */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+
   .info-group {
-    flex-direction: row;
+    flex-direction: column; /* Change to column layout */
+    align-items: center; /* Center content vertically */
+    padding: 0rem;
   }
 
   .day-card {
-    flex-direction: row;
+    flex-direction: column; /* Change to column layout */
+    align-items: center; /* Center content vertically */
+    border-radius: 8px;
+    padding: 1rem;
   }
 }
 
@@ -221,6 +246,3 @@ body {
 .dark-mode .value-sub-info {
   color: #a9b8d1;
 }
-
-/* Toggle Theme Class on Body to Switch Modes */
-/* Example: <body class="light-mode"> or <body class="dark-mode"> */
