@@ -3,6 +3,45 @@ import { getWeather } from "./weather"
 import { ICON_MAP } from "./iconMap"
 
 const apiKey = import.meta.env.VITE_API_KEY;
+const themeToggle = document.getElementById("themeToggle");
+const bodyClass = document.body.classList;
+
+// Function to toggle the theme
+function toggleTheme() {
+  if (themeToggle.checked) {
+    // Dark mode
+    bodyClass.remove("light-mode");
+    bodyClass.add("dark-mode");
+    localStorage.setItem("theme", "dark");
+  } else {
+    // Light mode
+    bodyClass.remove("dark-mode");
+    bodyClass.add("light-mode");
+    localStorage.setItem("theme", "light");
+  }
+}
+
+// Event listener for the theme toggle
+themeToggle.addEventListener("change", toggleTheme);
+
+// Check and set the initial theme based on user preference or local storage
+function setInitialTheme() {
+  const userPrefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const storedTheme = localStorage.getItem("theme");
+
+  if (storedTheme === "dark" || (userPrefersDark && !storedTheme)) {
+    // Set dark mode
+    bodyClass.add("dark-mode");
+    themeToggle.checked = true; // Toggle the checkbox
+  } else {
+    // Set light mode
+    bodyClass.add("light-mode");
+    themeToggle.checked = false; // Ensure checkbox is unchecked
+  }
+}
+
+// Call the function to set the initial theme
+setInitialTheme();
 
 
 navigator.geolocation.getCurrentPosition(positionSuccess, positionError)

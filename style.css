@@ -1,4 +1,4 @@
-/* Reset and Box Model */
+/* Common Reset and Box Model for Both Themes */
 *,
 *::after,
 *::before {
@@ -7,30 +7,61 @@
   padding: 0;
 }
 
-/* Body and Font */
+/* Common Body and Font Styles */
 body {
-  background-color: #f0f4f7; /* Light greyish-blue background */
-  color: #333; /* Darker text color for contrast */
-  font-family: 'Arial', sans-serif; /* Clean and modern font */
+  font-family: 'Arial', sans-serif;
 }
 
-/* Blurred Background for Certain Sections */
+/* Common Blurred Background */
 .blurred {
   filter: blur(2px);
   overflow: hidden;
 }
 
-/* Header Layout */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px; /* Adjust the margin as needed */
+}
+
+.theme-toggle input[type="checkbox"] {
+  appearance: none; /* Remove default styles */
+  -webkit-appearance: none; /* For webkit-based browsers */
+  width: 40px; /* Set the width of the switch */
+  height: 20px; /* Set the height of the switch */
+  background-color: #ccc; /* Background color for the switch */
+  border-radius: 10px; /* Rounded corners */
+  position: relative;
+  cursor: pointer;
+}
+
+.theme-toggle input[type="checkbox"]::before {
+  content: ""; /* Create a pseudo-element for the slider */
+  position: absolute;
+  width: 18px; /* Width of the slider */
+  height: 18px; /* Height of the slider */
+  background-color: #fff; /* Color of the slider */
+  border-radius: 50%; /* Round the slider */
+  transition: transform 0.3s; /* Add a smooth animation effect */
+}
+
+.theme-toggle input[type="checkbox"]:checked::before {
+  transform: translateX(20px); /* Move the slider to the right when checked */
+}
+
+
+
+/* Common Header Layout */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Header Left Section */
+/* Common Header Left Section */
 .header-left {
   display: flex;
   align-items: center;
@@ -49,16 +80,15 @@ body {
 }
 
 .header-current-temp {
-  font-size: 3rem; /* Larger font size for emphasis */
+  font-size: 3rem;
 }
 
 .header-location-display {
   font-size: 1.5rem;
-  color: #555;
   margin-left: 2rem;
 }
 
-/* Header Right Section */
+/* Common Header Right Section */
 .header-right {
   display: flex;
   align-items: center;
@@ -74,16 +104,14 @@ body {
 
 .label {
   font-size: 0.8rem;
-  color: #666;
   margin-bottom: 0.25rem;
 }
 
 .value-sub-info {
   font-size: 0.9rem;
-  color: #444;
 }
 
-/* Day Section */
+/* Common Day Section */
 .day-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -96,30 +124,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ffffff;
   border-radius: 8px;
   padding: 1rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .day-card-day {
   font-size: 1rem;
-  color: #666;
   margin: 0.5rem 0;
 }
 
-/* Hour Section */
+/* Common Hour Section */
 .hour-section {
   width: 100%;
   text-align: center;
-}
-
-.hour-row {
-  background-color: #e6eef8;
-}
-
-.hour-row:nth-child(2n) {
-  background-color: #dce4f0;
 }
 
 .hour-row > td {
@@ -146,3 +163,64 @@ body {
     flex-direction: row;
   }
 }
+
+/* Light Theme Specific Styles */
+.light-mode {
+  background-color: #f0f4f7;
+  color: #333;
+}
+
+.light-mode .header,
+.light-mode .day-card {
+  background-color: #ffffff;
+}
+
+.light-mode .hour-row {
+  background-color: #e6eef8;
+}
+
+.light-mode .hour-row:nth-child(2n) {
+  background-color: #dce4f0;
+}
+
+.light-mode .label,
+.light-mode .day-card-day {
+  color: #666;
+}
+
+.light-mode .value-sub-info {
+  color: #444;
+}
+
+/* Dark Theme Specific Styles */
+.dark-mode {
+  background-color: #0a0f1d;
+  color: #c7d3f2;
+}
+
+.dark-mode .header,
+.dark-mode .day-card {
+  background-color: #162033;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  border: 1px solid #2b3a57;
+}
+
+.dark-mode .hour-row {
+  background-color: #0e1726;
+}
+
+.dark-mode .hour-row:nth-child(2n) {
+  background-color: #162033;
+}
+
+.dark-mode .label,
+.dark-mode .day-card-day {
+  color: #c7d3f2;
+}
+
+.dark-mode .value-sub-info {
+  color: #a9b8d1;
+}
+
+/* Toggle Theme Class on Body to Switch Modes */
+/* Example: <body class="light-mode"> or <body class="dark-mode"> */
