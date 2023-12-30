@@ -63,9 +63,6 @@ body {
   z-index: 100;
 }
 
-
-
-
 .header-left {
   display: flex;
   align-items: center;
@@ -162,6 +159,7 @@ body {
 }
 @media (max-width: 850px) {
   .header {
+    position: relative;
     width: 100%;
     flex-direction: column;
   }
@@ -175,11 +173,14 @@ body {
     padding-bottom: 1rem;
   }
 
+  
   .dark-mode .header-left {
+    /* background-color: #162033; */
     border-bottom: 1px solid #c7d3f2;
   }
 
   .light-mode .header-left {
+    /* background-color: #ffffff; */
     border-bottom: 1px solid #333;
   }
 
