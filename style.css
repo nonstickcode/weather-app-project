@@ -156,11 +156,11 @@ body {
 }
 @media (max-width: 850px) {
   .header {
+    width: 100%;
     flex-direction: column;
   }
 
   .header-left, .header-right {
-    width: 100%;
     justify-content: center;
     margin-bottom: 1rem;
   }
@@ -199,8 +199,15 @@ body {
     flex-direction: column;
     align-items: center;
     border-radius: 8px;
-    padding: 1rem;
+    /* padding: 1rem; */
   }
+
+  .hour-row > td {
+    padding: 0.1rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+  
   .hour-section .weather-icon {
       width: 2rem;
       height: 2rem;
@@ -225,7 +232,7 @@ body {
 .light-mode .header,
 .light-mode .day-card {
   background-color: #ffffff;
-  /* box-shadow: 0 3px 6px rgba(0,0,0,0.1); */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
   border: 1px solid #bec8de;
 }
 
@@ -264,7 +271,7 @@ body {
 .dark-mode .header,
 .dark-mode .day-card {
   background-color: #162033;
-  /* box-shadow: 0 3px 6px rgba(255, 255, 255, 0.1); */
+  box-shadow: 0 3px 6px rgba(255, 255, 255, 0.1);
   border: 1px solid #2b3a57;
 }
 
