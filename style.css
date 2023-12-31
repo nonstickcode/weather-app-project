@@ -75,7 +75,7 @@ body {
 
 .weather-icon {
   width: 60px;
-  height: 60px;
+  height: auto;
   object-fit: contain;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -84,7 +84,7 @@ body {
 
 .weather-icon.large {
   width: 100px;
-  height: 100px;
+  height: auto;
 }
 
 .header-current-temp {
@@ -218,7 +218,7 @@ body {
   
   .hour-section .weather-icon {
       width: 2rem;
-      height: 2rem;
+      height: auto;
     
   }
 }
