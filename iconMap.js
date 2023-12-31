@@ -17,7 +17,9 @@ function addMapping(values, icon) {
   })
 }
 
-/* WMO Weather interpretation codes (WW)
+/* 
+
+WMO Weather interpretation codes (WW)
 
 0	Clear sky
 1, 2, 3	Mainly clear, partly cloudy, and overcast
