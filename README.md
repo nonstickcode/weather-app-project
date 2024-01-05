@@ -1,5 +1,9 @@
 # Weather API App
 
+[View Live Deployment Here](https://nonstickcode.github.io/weather-app-project/)
+
+![Project Image](./public/readme-image.jpeg)
+
 ## Overview
 
 Weather API App is a personal solo project designed to provide real-time weather data based on the user's current geographic location. This app showcases the integration of multiple APIs to deliver accurate and up-to-date weather information. It's a practical tool for anyone needing instant weather updates for their current location.
