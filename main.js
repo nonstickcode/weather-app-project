@@ -13,13 +13,13 @@ function toggleTheme() {
     // Dark mode
     bodyClass.remove("light-mode");
     bodyClass.add("dark-mode");
-    toggleLabel.textContent = "Toggle Light Mode"; // Update label text
+    toggleLabel.textContent = "Toggle Light Mode";
     localStorage.setItem("theme", "dark");
   } else {
     // Light mode
     bodyClass.remove("dark-mode");
     bodyClass.add("light-mode");
-    toggleLabel.textContent = "Toggle Dark Mode"; // Update label text
+    toggleLabel.textContent = "Toggle Dark Mode";
     localStorage.setItem("theme", "light");
   }
 }
@@ -35,13 +35,13 @@ function setInitialTheme() {
   if (storedTheme === "dark" || (userPrefersDark && !storedTheme)) {
     // Set dark mode
     bodyClass.add("dark-mode");
-    toggleLabel.textContent = "Toggle Light Mode"; // Update label text
-    themeToggle.checked = true; // Toggle the checkbox
+    toggleLabel.textContent = "Toggle Light Mode";
+    themeToggle.checked = true;
   } else {
     // Set light mode
     bodyClass.add("light-mode");
-    toggleLabel.textContent = "Toggle Dark Mode"; // Update label text
-    themeToggle.checked = false; // Ensure checkbox is unchecked
+    toggleLabel.textContent = "Toggle Dark Mode";
+    themeToggle.checked = false;
   }
 }
 
@@ -87,11 +87,13 @@ function displayLocation(coords) {
         setValue('location', locationDisplay);
       } else {
         // Display latitude and longitude if city/state/country is unavailable
+        alert("Exact city unknown, only coordinates are available at this time.");
         setValue('location', `Lat: ${coords.latitude.toFixed(2)}, Lon: ${coords.longitude.toFixed(2)}`);
       }
     })
     .catch(e => {
       console.error(e);
+      alert("Exact city unknown, only coordinates are available at this time.");
       setValue('location', `Lat: ${coords.latitude.toFixed(2)}, Lon: ${coords.longitude.toFixed(2)}`);
     });
 }
