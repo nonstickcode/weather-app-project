@@ -73,7 +73,7 @@ function positionError() {
 }
 
 function displayLocation(coords) {
-  fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=43.842920&lon=168.662644`)
+  fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${coords.latitude}&lon=${coords.longitude}`)
     .then(response => response.json())
     .then(data => {
       const address = data.address;
