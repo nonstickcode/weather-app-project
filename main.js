@@ -73,19 +73,30 @@ function positionError() {
 }
 
 function displayLocation(coords) {
-  fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${coords.latitude}&lon=${coords.longitude}`)
+  fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=43.842920&lon=168.662644`)
     .then(response => response.json())
     .then(data => {
       const address = data.address;
       const city = address.city || address.town || address.village;
       const state = address.state;
-      setValue('location', `${city}, ${state}`);
+      const country = address.country;
+
+      if (city && (state || country)) {
+        // Display city and state for US, city and country otherwise
+        const locationDisplay = country === "United States" ? `${city}, ${state}` : `${city}, ${country}`;
+        setValue('location', locationDisplay);
+      } else {
+        // Display latitude and longitude if city/state/country is unavailable
+        setValue('location', `Lat: ${coords.latitude.toFixed(2)}, Lon: ${coords.longitude.toFixed(2)}`);
+      }
     })
     .catch(e => {
       console.error(e);
-      alert("Error converting latitude and longitude to city and state");
+      setValue('location', `Lat: ${coords.latitude.toFixed(2)}, Lon: ${coords.longitude.toFixed(2)}`);
     });
 }
+
+
 
 function renderWeather({ current, daily, hourly }) {
   renderCurrentWeather(current)
